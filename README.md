@@ -14,7 +14,7 @@ var playerFacade = {
     play: 'method to play movies',
     stop: 'method to stop movies'
 };
-
+```
 
 Create a facade implelemntation. Helper methods and fields may be used and will be functional, but they will not be
 exposed as part of the facade.
@@ -48,6 +48,6 @@ var player = new Facade(playerFacade, flashPlayer);
 // Or create an html player
 var player = new Facade(playerFacade, htmlPlayer);
 
-// Use the player without caring which one you have. 
+// Use the player without caring which one you have.
 player.play().stop();
 ```
