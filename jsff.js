@@ -35,6 +35,8 @@ if (!Function.prototype.bind) {
 
         var facade, method;
 
+        // TODO: add enforce of "new"
+
         facade = {};
 
         for (method in description) {

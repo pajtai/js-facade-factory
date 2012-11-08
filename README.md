@@ -6,7 +6,7 @@ collaboration or organizational tool.
 
 Sample usage:
 
-In a shared file / module, describe the facade that will be used by multiple imlementations. The faced is described
+In a shared file / module, describe the facade that will be used by multiple imlementations. The facade is described
 using key value pairs. The keys are the method names, and the values are the descriptions of the functionality.
 
 ```javascript
