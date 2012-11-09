@@ -1,0 +1,25 @@
+{
+    "name": "JS-Facade-Factory",
+    "title": "JS Facade Factory",
+    "description": "Create sharable Facades with the option to use mixins",
+    "version": "0.0.1",
+    "homepage": "https://github.com/pajtai/js-facade-factory",
+    "author": {
+        "name": "Peter Ajtai",
+        "url": "https://github.com/pajtai"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pajtai/js-facade-factory.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pajtai/grunt-php-set-constant/issues"
+    },
+    "licenses": {
+         "type": "MIT",
+        "url": "https://github.com/pajtai/js-facade-factory/blob/master/MIT-LICENSE.txt"
+    },
+    "dependencies": {
+    },
+    "keywords": []
+}
