@@ -31,29 +31,53 @@ if (!Function.prototype.bind) {
     // TODO: create version for require js
     // The Facade encapsulates objectIn according to the description
     // The exposed facade is guaranteed to have exactly the functions described in description.
-    window.Facade = function(description, objectIn) {
+    var Facade = function(description, objectIn) {
 
-        var facade, method;
-
-        // TODO: add enforce of "new"
+        var facade, mixIn, warn, self;
 
         facade = {};
 
-        for (method in description) {
-            if (description.hasOwnProperty(method)) {
-                if (! objectIn[method]) {
-                    if (window.console && window.console.log) {
-                        console.log(" **************** Warning ****************** ");
-                        console.log(methodName + " not imlemented for this facade");
-                        console.log("+---------------------------------------------+");
-                    }
-                }
-                // Must be a function - bind is needed to enable use of methods other than those on the interface
-                facade[method] = objectIn[method].bind(objectIn);
+        self = {};
+
+        warn = function(message) {
+            if (window.console && window.console.log) {
+                console.log(" **************** Warning ****************** ");
+                console.log(message);
+                console.log("+---------------------------------------------+");
             }
-        }
+        };
+
+        mixIn = function(description, objectIn) {
+            var property, method;
+
+            for (property in objectIn) {
+                self[property] = objectIn[property].bind(self);
+            }
+
+            for (method in description) {
+                if (description.hasOwnProperty(method)) {
+                    if (! objectIn[method]) {
+                        warn(method + " not imlemented for this facade");
+                    }
+                    if ('mixIn' === method) {
+                        warn(method + " is being used as a faced method name. This means you cannot mixIn anymore " +
+                            "facades.")
+                    }
+                    // Must be a function - bind is needed to enable use of methods other than those on the interface
+                    facade[method] = objectIn[method].bind(self);
+                }
+            }
+
+            return facade;
+        };
+
+        facade.mixIn = mixIn;
+
+        facade.mixIn(description, objectIn);
 
         return facade;
     };
+
+    window.Facade = Facade;
 
 }(window));
