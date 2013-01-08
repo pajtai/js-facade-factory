@@ -31,4 +31,4 @@ var player = Facade(playerFacade, htmlPlayer).mixIn(remoteFacade, remote);
 player.on().play().stop().off();
 
 // Helper is not directly accessible: (uncomment to check)
-// htmlInterface.helper();
+console.log(typeof player.helper);
