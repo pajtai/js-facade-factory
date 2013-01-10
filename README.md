@@ -1,11 +1,15 @@
 js-facade-factory
 =================
 
+### [Demo](http://pajtai.github.com/js-facade-factory/tests/sample/)
+
 Releases:
 
 * Developer
     * [0.0.1](http://pajtai.github.com/js-facade-factory/builds/jsff.0.0.1.js)
+    * [0.0.2](http://pajtai.github.com/js-facade-factory/builds/jsff.0.0.2.js)
 * Production
+
     
 
 A way to create facades that are guaranteed to have only the methods listed in their descriptions. This is a useful

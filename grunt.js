@@ -8,14 +8,14 @@ module.exports = function (grunt) {
         min: {
             facadeFactoryMin: {
                 src: ['application/jsff.js'],
-                dest: "builds/jsffs.<%= grunt.file.readJSON('package.json').version %>.min.js"
+                dest: "builds/jsff.<%= grunt.file.readJSON('package.json').version %>.min.js"
             }
         },
 
         concat: {
             facadeFactory: {
                 src: ['application/jsff.js'],
-                dest: "builds/jsffs.<%= grunt.file.readJSON('package.json').version %>.js"
+                dest: "builds/jsff.<%= grunt.file.readJSON('package.json').version %>.js"
             }
         }
     });
