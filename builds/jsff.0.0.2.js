@@ -1,5 +1,6 @@
 /*global window:true */
 
+;
 // We rely on bind, make sure it's there
 if (!Function.prototype.bind) {
     Function.prototype.bind = function (oThis) {
