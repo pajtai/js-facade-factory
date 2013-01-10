@@ -1,7 +1,9 @@
 js-facade-factory
 =================
 
-[(very) Beta release](http://pajtai.github.com/js-facade-factory/builds/jsff.beta.js)
+Releases:
+
+* [0.0.1](http://pajtai.github.com/js-facade-factory/builds/jsff.beta.js)
 
 A way to create facades that are guaranteed to have only the methods listed in their descriptions. This is a useful
 collaboration or organizational tool.
@@ -23,9 +25,10 @@ exposed as part of the facade.
 
 ```javascript
 var htmlPlayer = {
-    play: function() { this.helper(); return this; },
+    time: 0,
+    play: function() { ++this.time; this.helper(); return this; },
     stop: function() { console.log("html stop"); return this; },
-    helper: function() { console.log("html play and play helper fired"); },
+    helper: function() { console.log("html play and play helper fired - time is now: " + this.time); },
 };
 ```
 

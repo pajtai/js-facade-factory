@@ -18,7 +18,7 @@ var htmlPlayer = {
 };
 
 var remote = {
-    on: function() { this.helper(); console.log("remote on"); return this; },
+    on: function() { this.helper(this.helperProp); console.log("remote on"); return this; },
     off: function() { console.log("remote off"); return this; }
 };
 
