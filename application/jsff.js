@@ -51,7 +51,14 @@ if (!Function.prototype.bind) {
             var property, method;
 
             for (property in objectIn) {
-                self[property] = objectIn[property].bind(self);
+                if(objectIn.hasOwnProperty(property)){
+                    // Only apply .bind() to object methods
+                    if(objectIn[property].bind){
+                        self[property] = objectIn[property].bind(self);
+                    }else{
+                        self[property] = objectIn[property];
+                    }
+                }
             }
 
             for (method in description) {
