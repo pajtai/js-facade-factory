@@ -9,7 +9,7 @@ Releases:
     * [0.0.1](http://pajtai.github.com/js-facade-factory/builds/jsff.0.0.1.js)
     * [0.0.2](http://pajtai.github.com/js-facade-factory/builds/jsff.0.0.2.js)
 * Production
-
+    * [0.0.2](http://pajtai.github.com/js-facade-factory/builds/jsff.0.0.2.min.js)
     
 
 A way to create facades that are guaranteed to have only the methods listed in their descriptions. This is a useful
@@ -28,7 +28,7 @@ var playerFacade = {
 ```
 
 Create a facade implelemntation. Helper methods and fields may be used and will be functional, but they will not be
-exposed as part of the facade.
+exposed as part of the facade; they are essentially private.
 
 ```javascript
 var htmlPlayer = {
