@@ -3,7 +3,10 @@ js-facade-factory
 
 Releases:
 
-* [0.0.1](http://pajtai.github.com/js-facade-factory/builds/jsff.beta.js)
+* Developer
+    * [0.0.1](http://pajtai.github.com/js-facade-factory/builds/jsff.0.0.1.js)
+* Production
+    
 
 A way to create facades that are guaranteed to have only the methods listed in their descriptions. This is a useful
 collaboration or organizational tool.
