@@ -11,9 +11,10 @@ var remoteFacade = {
 
 // An implelemntation of the interface
 var htmlPlayer = {
-    play: function() { console.log("html play"); this.helper(); return this; },
+    play: function() { console.log("html play"); this.helper(this.helperProp); return this; },
     stop: function() { console.log("html stop"); return this; },
-    helper: function() { console.log("player helper fired"); }
+    helper: function(prop) { console.log("player helper fired"); console.log('player helper property passed in: ' + prop); console.log('player helper prop defined: ' + this.helperProp) },
+    helperProp: true
 };
 
 var remote = {
@@ -32,3 +33,4 @@ player.on().play().stop().off();
 
 // Helper is not directly accessible: (uncomment to check)
 console.log(typeof player.helper);
+console.log(typeof player.helperProp);
