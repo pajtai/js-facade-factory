@@ -59,3 +59,11 @@ var player = new Facade(playerFacade, htmlPlayer);
 // Use the player without caring which one you have.
 player.play().stop();
 ```
+
+### Contributors
+* [Peter Ajtai](https://github.com/pajtai)
+* [Jonathan Waltner](https://github.com/uselessinfo)
+
+### Changelog
+0.0.1 - 2012 Nov 09 - Initial release
+0.0.2 - 2013 Jan 10 - Support for properties
