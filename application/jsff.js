@@ -53,7 +53,7 @@ if (!Function.prototype.bind) {
             for (property in objectIn) {
                 if(objectIn.hasOwnProperty(property)){
                     // Only apply .bind() to object methods
-                    if(objectIn[property].bind){
+                    if(objectIn[property] && objectIn[property].bind){
                         self[property] = objectIn[property].bind(self);
                     }else{
                         self[property] = objectIn[property];
