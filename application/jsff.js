@@ -10,7 +10,8 @@ if (!Function.prototype.bind) {
 
         var aArgs = Array.prototype.slice.call(arguments, 1),
             fToBind = this,
-            fNOP = function () {},
+            fNOP = function () {
+            },
             fBound = function () {
                 return fToBind.apply(this instanceof fNOP && oThis
                     ? this
@@ -25,13 +26,13 @@ if (!Function.prototype.bind) {
     };
 }
 
-(function(window, undefined) {
+(function (window) {
     'use strict';
 
     // TODO: create version for require js
     // The Facade encapsulates objectIn according to the description
     // The exposed facade is guaranteed to have exactly the functions described in description.
-    var Facade = function(description, objectIn) {
+    window.Facade = function (description, objectIn) {
 
         var facade, mixIn, warn, self;
 
@@ -39,7 +40,7 @@ if (!Function.prototype.bind) {
 
         self = {};
 
-        warn = function(message) {
+        warn = function (message) {
             if (window.console && window.console.log) {
                 console.log(" **************** Warning ****************** ");
                 console.log(message);
@@ -47,29 +48,37 @@ if (!Function.prototype.bind) {
             }
         };
 
-        mixIn = function(description, objectIn) {
+        mixIn = function (description, objectIn) {
             var property, method;
 
             for (property in objectIn) {
-                if(objectIn.hasOwnProperty(property)){
+
+                if (objectIn.hasOwnProperty(property)) {
+
                     // Only apply .bind() to object methods
-                    if(objectIn[property] && objectIn[property].bind){
+                    if (objectIn[property] && objectIn[property].bind) {
                         self[property] = objectIn[property].bind(self);
-                    }else{
+
+                    } else {
                         self[property] = objectIn[property];
+
                     }
                 }
             }
 
             for (method in description) {
+
                 if (description.hasOwnProperty(method)) {
-                    if (! objectIn[method]) {
-                        warn(method + " not imlemented for this facade");
+
+                    if (!objectIn[method]) {
+                        warn(method + " not implemented for this facade");
                     }
+
                     if ('mixIn' === method) {
                         warn(method + " is being used as a faced method name. This means you cannot mixIn anymore " +
                             "facades.")
                     }
+
                     // Must be a function - bind is needed to enable use of methods other than those on the interface
                     facade[method] = objectIn[method].bind(self);
                 }
@@ -84,7 +93,5 @@ if (!Function.prototype.bind) {
 
         return facade;
     };
-
-    window.Facade = Facade;
 
 }(window));
