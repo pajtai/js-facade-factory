@@ -55,13 +55,13 @@ if (!Function.prototype.bind) {
 
                 if (objectIn.hasOwnProperty(property)) {
 
-                    // Only apply .bind() to object methods and not properties
-                    if (objectIn[property].bind) {
-
+                    // Only apply .bind() to object methods
+                    if (objectIn[property] && objectIn[property].bind) {
                         self[property] = objectIn[property].bind(self);
-                    } else {
 
+                    } else {
                         self[property] = objectIn[property];
+
                     }
                 }
             }
