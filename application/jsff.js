@@ -32,7 +32,7 @@ if (!Function.prototype.bind) {
     // TODO: create version for require js
     // The Facade encapsulates objectIn according to the description
     // The exposed facade is guaranteed to have exactly the functions described in description.
-    window.Facade = function (description, objectIn) {
+    var Facade = function (description, objectIn) {
 
         var facade, mixIn, warn, self;
 
@@ -93,5 +93,13 @@ if (!Function.prototype.bind) {
 
         return facade;
     };
+
+    if (typeof define === "function" && define.amd) {
+        define( "facade", [], function () { return Facade; } );
+    } else if (typeof exports == "object") {
+        module.exports = Facade;
+    } else if ( typeof window === "object" && typeof window.document === "object" ) {
+        window.Facade = Facade;
+    }
 
 }(window));

@@ -69,5 +69,6 @@ player.play().stop();
 * [Jonathan Waltner](https://github.com/uselessinfo)
 
 ### Changelog
-0.0.1 - 2012 Nov 09 - Initial release  
-0.0.2 - 2013 Jan 10 - Support for properties  
+0.0.3 - 2013 Oct 15 - Support for AMD
+0.0.2 - 2013 Jan 10 - Support for properties
+0.0.1 - 2012 Nov 09 - Initial release

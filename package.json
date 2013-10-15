@@ -2,7 +2,7 @@
     "name": "JS-Facade-Factory",
     "title": "JS Facade Factory",
     "description": "Create sharable Facades with the option to use mixins",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "homepage": "https://github.com/pajtai/js-facade-factory",
     "author": {
         "name": "Peter Ajtai",
