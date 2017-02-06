@@ -1,6 +1,10 @@
 js-facade-factory
 =================
 
+```$xslt
+npm install --save facade-factory
+```
+
 ### [Demo](http://solid-stack.github.io/js-facade-factory/tests/sample/)
 
 Releases:
@@ -70,6 +74,7 @@ player.play().stop();
 
 ### Changelog
 
+* 0.1.0 - 2017 Feb 06 - Publishing on NPM
 * 0.0.3 - 2013 Oct 15 - Support for AMD
 * 0.0.2 - 2013 Jan 10 - Support for properties
 * 0.0.1 - 2012 Nov 09 - Initial release
